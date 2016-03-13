@@ -25,6 +25,7 @@ java -jar target/jtreceval-0.0.1-SNAPSHOT-jar-with-dependencies.jar
 String qrels = "/path/to/qrels";
 String res = "/path/to/run";
 trec_eval te = new trec_eval();
-te.runAndGetOutput(new String[]{"-q", qrels, res);
+String[][] output = te.runAndGetOutput(new String[]{"-q", qrels, res});
+//1st dimension is line of output, 2nd dim is [measure, query, value]
 ``` 
 
