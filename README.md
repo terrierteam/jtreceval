@@ -3,8 +3,9 @@
 A wrapper around binaries for trec_eval on various platforms.
 
 Currently, we have the binaries for the following operating systems:
- * Linux Intel, 32bit and 64bit
+ * Linux Intel, 32bit (and hence 64bit)
  * Mac Intel, OS X 64bit
+ * Windows Intel, 32bit (and hence 64bit)
 
 
 ## Compiling
