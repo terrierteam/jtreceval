@@ -17,8 +17,14 @@ Java 1.7 is the minimum requirement. The Maven pom file depends only on Apache C
 
 ## Usage from the command-line
 
+Essentially, executing the jar file using `java -jar` should have the same effect as executing trec_eval directly on your platform:
 ```
 java -jar target/jtreceval-0.0.1-SNAPSHOT-jar-with-dependencies.jar
+```
+
+Example:
+```
+java -jar target/jtreceval-0.0.1-SNAPSHOT-jar-with-dependencies.jar qrels myrun.res
 ```
 
 
