@@ -1,6 +1,6 @@
 # jtreceval
 
-A wrapper around binaries for trec_eval on various platforms.
+A Java wrapper around the binaries for trec_eval on various platforms.
 
 Currently, we have the binaries for the following operating systems:
  * Linux Intel, 32bit (and hence 64bit)
@@ -32,3 +32,7 @@ String[][] output = te.runAndGetOutput(new String[]{"-q", qrels, res});
 //1st dimension is line of output, 2nd dim is [measure, query, value]
 ``` 
 
+## Known Issues/Possible Improvements
+
+1. Currently the Cywgin trec_eval binary is incorrectly detected as a virus by Windows Defender.
+2. A more reasonable Java API that is easy to use.
