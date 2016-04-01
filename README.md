@@ -13,6 +13,8 @@ Currently, we have the binaries for the following operating systems:
 mvn package
 ```
 
+Java 1.7 is the minimum requirement. The Maven pom file depends only on Apache Commons-IO, and Junit (for testing only).
+
 ## Usage from the command-line
 
 ```
