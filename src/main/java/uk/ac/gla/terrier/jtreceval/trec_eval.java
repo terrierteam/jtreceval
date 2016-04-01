@@ -19,13 +19,13 @@ import org.apache.commons.io.IOUtils;
 import org.apache.commons.io.LineIterator;
 
 /**
- * A wrapper for trec_eval native binaries that is usabe from a number
+ * A wrapper for trec_eval native binaries that is usable on a number
  * of platforms.
  * <p><b>Supported Platforms</b><p>
  * <ul>
- * <li>Windows (32bit)</li>
- * <li>Linux (32bit)</li>
- * <li>Mac OS X (32bit)</li>
+ * <li>Windows (Intel 32bit)</li>
+ * <li>Linux (Intel 32bit)</li>
+ * <li>Mac OS X (Intel 64bit)</li>
  * </ul>
  * @author Craig Macdonald
  */
