@@ -1,6 +1,6 @@
 # jtreceval
 
-A Java wrapper around the binaries for trec_eval (https://github.com/usnistgov/trec_eval) on various platforms. The trec_eval binaries are included in the jar file, so the jar is easy to use on a number of platforms without compiling.
+A Java wrapper around the binaries for NIST's trec_eval (https://github.com/usnistgov/trec_eval) on various platforms. The trec_eval binaries are included in the jar file, so the jar is easy to use on a number of platforms without compiling.
 
 Currently, we have the binaries for the following operating systems:
  * Linux, Intel 32bit (and hence 64bit)
@@ -42,3 +42,9 @@ String[][] output = te.runAndGetOutput(new String[]{"-q", qrels, res});
 
 1. Currently the Cywgin trec_eval binary is incorrectly detected as a virus by Windows Defender.
 2. A more reasonable Java API that is easy to use.
+
+## Credits
+
+Developed by Craig Macdonald, University of Glasgow. 
+
+The repository contains compilations of NIST's trec_eval for various platforms.
