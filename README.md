@@ -1,11 +1,11 @@
 # jtreceval
 
-A Java wrapper around the binaries for trec_eval on various platforms.
+A Java wrapper around the binaries for trec_eval (https://github.com/usnistgov/trec_eval) on various platforms. The trec_eval binaries are included in the jar file, so the jar is easy to use on a number of platforms without compiling.
 
 Currently, we have the binaries for the following operating systems:
- * Linux Intel, 32bit (and hence 64bit)
- * Mac Intel, OS X 64bit
- * Windows Intel, 32bit (and hence 64bit)
+ * Linux, Intel 32bit (and hence 64bit)
+ * Mac OS X, Intel 64bit
+ * Windows, Intel 32bit (and hence 64bit)
 
 
 ## Compiling
@@ -17,7 +17,7 @@ Java 1.7 is the minimum requirement. The Maven pom file depends only on Apache C
 
 ## Usage from the command-line
 
-Essentially, executing the jar file using `java -jar` should have the same effect as executing trec_eval directly on your platform:
+Essentially, executing the jar file using `java -jar` should have the same effect as executing `trec_eval` directly on your platform:
 ```
 java -jar target/jtreceval-0.0.1-SNAPSHOT-jar-with-dependencies.jar
 ```
