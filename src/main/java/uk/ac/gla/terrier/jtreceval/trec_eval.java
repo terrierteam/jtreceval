@@ -21,7 +21,7 @@ import org.apache.commons.io.LineIterator;
 /**
  * A wrapper for trec_eval native binaries that is usable on a number
  * of platforms.
- * <p><b>Supported Platforms</b><p>
+ * <br><b>Supported Platforms</b><br>
  * <ul>
  * <li>Windows (Intel 32bit)</li>
  * <li>Linux (Intel 32bit)</li>
