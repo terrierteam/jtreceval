@@ -99,6 +99,7 @@ public class trec_eval
 		} catch (Exception e) {
 			throw new UnsupportedOperationException(e);
 		}
+		assert tempExec.exists() : "Exe file " + tempExec.toString() + " does not exist after creation";
 		return tempExec;
 	}
 
