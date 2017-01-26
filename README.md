@@ -3,7 +3,7 @@
 A Java wrapper around the binaries for NIST's trec_eval (https://github.com/usnistgov/trec_eval) on various platforms. The trec_eval binaries are included in the jar file, so the jar is easy to use on a number of platforms without compiling.
 
 Currently, we have the binaries for the following operating systems:
- * Linux, Intel 32bit (and hence 64bit)
+ * Linux, Intel 32bit, 64bit
  * Mac OS X, Intel 64bit
  * Windows, Intel 32bit (and hence 64bit)
 
@@ -19,12 +19,12 @@ Java 1.7 is the minimum requirement. The Maven pom file depends only on Apache C
 
 Essentially, executing the jar file using `java -jar` should have the same effect as executing `trec_eval` directly on your platform:
 ```
-java -jar target/jtreceval-0.0.1-SNAPSHOT-jar-with-dependencies.jar
+java -jar target/jtreceval-0.0.2-SNAPSHOT-jar-with-dependencies.jar
 ```
 
 Example:
 ```
-java -jar target/jtreceval-0.0.1-SNAPSHOT-jar-with-dependencies.jar qrels myrun.res
+java -jar target/jtreceval-0.0.2-SNAPSHOT-jar-with-dependencies.jar qrels myrun.res
 ```
 
 
