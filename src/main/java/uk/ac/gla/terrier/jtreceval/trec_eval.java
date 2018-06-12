@@ -7,6 +7,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.PrintStream;
+import java.lang.ProcessBuilder.Redirect;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -136,6 +137,7 @@ public class trec_eval
 		List<String[]> output = new ArrayList<String[]>();
 		try{
 			ProcessBuilder pb = getBuilder(args);
+			pb.redirectError(Redirect.INHERIT);
 			Process p = pb.start();
 			InputStream in = p.getInputStream();
 			LineIterator it = IOUtils.lineIterator(new InputStreamReader(in));			
