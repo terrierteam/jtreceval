@@ -3,6 +3,7 @@ package uk.ac.gla.terrier.jtreceval;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
@@ -35,9 +36,15 @@ public class trec_eval
 	static boolean DELETE = true;
 	static File trec_eval_temp = null;
 	static Map<String,String[]> LIB_DEPENDENCIES = new HashMap<String,String[]>();
+	static Map<String,String[]> FILE_DEPENDENCIES = new HashMap<String,String[]>();
+
 	static {
 		LIB_DEPENDENCIES.put("trec_eval-win-x86", new String[]{"cygwin1.dll"});
 		LIB_DEPENDENCIES.put("trec_eval-win-amd64", new String[]{"cygwin1.dll"});
+
+		FILE_DEPENDENCIES.put("trec_eval-linux-amd64", new String[]{"/lib64/ld-linux-x86-64.so.2"});
+		FILE_DEPENDENCIES.put("trec_eval-linux-i386", new String[]{"/lib/libm.so.6"});
+		FILE_DEPENDENCIES.put("trec_eval-linux-i386", new String[]{"/lib/libc.so.6"});
 	};
 	
 	static String getOSShort()
@@ -54,7 +61,13 @@ public class trec_eval
 	
 	public static boolean isPlatformSupported()
 	{
-		return trec_eval.class.getClassLoader().getResource(getExecName()) != null;		
+		final String execName = getExecName();
+		if (! (trec_eval.class.getClassLoader().getResource(execName) != null))
+			return false;
+		for(String f : FILE_DEPENDENCIES.getOrDefault(execName, new String[0]))
+			if (! new File(f).exists())
+				return false;
+		return true;
 	}
 	
 	static File getTrecEvalBinary()
@@ -201,6 +214,15 @@ public class trec_eval
 				t1.join();
 				t2.join();
 			}
+		} catch (IOException e) {
+			System.err.println(e);
+			if (e.getMessage().contains("No such file or directory"))
+			{
+				System.err.println("Your OS may not have the necessary libraries installed. We expected: " 
+						+ FILE_DEPENDENCIES.getOrDefault(getExecName(), new String[0]));
+			}
+			e.printStackTrace();
+			exit = -1;
 		} catch (Exception e) {
 			System.err.println(e);
 			e.printStackTrace();
@@ -231,6 +253,11 @@ public class trec_eval
 	 */
     public static void main( String[] args )
     {
+		if (args.length == 1 && args[0].equals("--checkplatform"))
+		{
+			System.out.println("Platform supported: " + isPlatformSupported());
+			return;
+		}
         System.exit(new trec_eval().run(args));
     }
 }
