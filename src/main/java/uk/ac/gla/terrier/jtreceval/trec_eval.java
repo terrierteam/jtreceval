@@ -12,6 +12,7 @@ import java.lang.ProcessBuilder.Redirect;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -219,7 +220,7 @@ public class trec_eval
 			if (e.getMessage().contains("No such file or directory"))
 			{
 				System.err.println("Your OS may not have the necessary libraries installed. We expected: " 
-						+ FILE_DEPENDENCIES.getOrDefault(getExecName(), new String[0]));
+						+ Arrays.toString(FILE_DEPENDENCIES.getOrDefault(getExecName(), new String[0])));
 			}
 			e.printStackTrace();
 			exit = -1;
