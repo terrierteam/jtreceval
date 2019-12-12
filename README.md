@@ -28,7 +28,7 @@ java -jar target/jtreceval-0.0.2-SNAPSHOT-jar-with-dependencies.jar qrels myrun.
 ```
 
 
-## Usage from Java
+## Usage from Java
 
 ```
 String qrels = "/path/to/qrels";
@@ -43,7 +43,7 @@ String[][] output = te.runAndGetOutput(new String[]{"-q", qrels, res});
 1. Currently the Cywgin trec_eval binary is incorrectly detected as a virus by Windows Defender.
 2. A more reasonable Java API that is easy to use.
 
-## Credits
+## Credits
 
 Developed by Craig Macdonald, University of Glasgow. 
 
