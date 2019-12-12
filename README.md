@@ -9,7 +9,7 @@ Currently, we have the binaries for the following operating systems:
 
 
 ## Compiling
-```
+```sh
 mvn package
 ```
 
@@ -18,19 +18,19 @@ Java 1.7 is the minimum requirement. The Maven pom file depends only on Apache C
 ## Usage from the command-line
 
 Essentially, executing the jar file using `java -jar` should have the same effect as executing `trec_eval` directly on your platform:
-```
+```sh
 java -jar target/jtreceval-0.0.2-SNAPSHOT-jar-with-dependencies.jar
 ```
 
 Example:
-```
+```sh
 java -jar target/jtreceval-0.0.2-SNAPSHOT-jar-with-dependencies.jar qrels myrun.res
 ```
 
 
 ## Usage from Java
 
-```
+```java
 String qrels = "/path/to/qrels";
 String res = "/path/to/run";
 trec_eval te = new trec_eval();
