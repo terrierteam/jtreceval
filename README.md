@@ -1,3 +1,4 @@
+[![Build Status](https://api.travis-ci.org/terrierteam/jtreceval.svg)](https://travis-ci.org/terrierteam/jtreceval)
 [![Maven Central](https://img.shields.io/maven-central/v/uk.ac.gla.dcs.terrierteam/jtreceval)](https://search.maven.org/artifact/uk.ac.gla.dcs.terrierteam/jtreceval)
 
 # jtreceval
